@@ -8,11 +8,11 @@
 
 ## Prerequisities
 
-To run the script, ensure you have this version installed:
+To run the script, ensure you have the following prerequisites installed:
 
-- Java: openjdk 21.0.12.1 2026-08-18
-- Python: Version 3.11
-  - or see uv package manager section
+- Java: Download [here](https://www.java.com/fr/download/manual.jsp)
+- Python: Version 3.11.4
+  - or alternately refer to the uv package manager section below
 
 <h3 id="uv">UV - An Ultra-fast python package manager (Recommended)</h3>
 
@@ -21,13 +21,23 @@ To run the script, ensure you have this version installed:
 2. Set and locks the default python version for this current project
 
 ```py
-uv python pin 3.11
+uv python pin 3.11.4
 ```
 
-3. Run the script directly with uv with the following command:
+3. Run the script directly with uv with the appropriate command for your terminal:
+
+**Linux / macOS (Bash)**
 
 ```py
 uv run run.py -layer1 ./data/bati/neudorf_2012.shp -layer2 ./data/bati/neudorf_2022.shp -attributes '["HAUTEUR","ID"]' -output_prefix FR_NEU -java_memory 4G
+```
+
+**Windows (PowerShell)**
+
+_Note: Inner double quotes must be escaped using backticks._
+
+```py
+uv run run.py -layer1 ./data/bati/neudorf_2012.shp -layer2 ./data/bati/neudorf_2022.shp -attributes '[\"HAUTEUR",\"ID\"]' -output_prefix FR_NEU -java_memory 4G
 ```
 
 ### Simple Python
@@ -36,7 +46,7 @@ uv run run.py -layer1 ./data/bati/neudorf_2012.shp -layer2 ./data/bati/neudorf_2
 pip install -r requirements.txt
 ```
 
-## Run
+### Run
 
 Pour Neudorf :
 
